@@ -25,6 +25,7 @@
 body{
     background: var(--bg-color);
     color:var(--text-color) ;
+    
  
 }
 
@@ -49,8 +50,12 @@ section{
     font-size: 2.5rem;
     color: var(--text-color);
     font-weight: 600;
-    cursor: default; 
+    cursor: default;
+    
+        
+    
 }
+
 .navbar a {
     font-size: 1.7rem;
     color:var(--text-color);
@@ -75,12 +80,14 @@ color : var(--min-color);
     display: flex;
     justify-content: center;
     align-items:center
+
 }
 
 .home-img img{
 width: 25vw;
 border: 10px double #00EEff;
 padding: 5px;
+border-radius: 28%;
 
 }
 
@@ -231,11 +238,12 @@ line-height: 1.2;
 }
 
 .portfolio-container{
-    display: grid;
+    display:grid;
     grid-template-columns: repeat(3,1fr);
     align-items: center;
     gap: 2,5rem;
     margin: 10px;
+    
 }
 
 .portfolio-container .portfolio-box {
@@ -251,6 +259,7 @@ line-height: 1.2;
     width: 100%;
     transition: .5s ease;  
 }
+
 
 .portfolio-box:hover img {
     transform: scale(1.1);
@@ -336,11 +345,44 @@ line-height: 1.2;
     resize: none;
 }
 
-.contact form .btn {
+/* .contact form a {
     margin-top: 2rem;
     cursor: pointer;
+} */
+
+.contact .input-box {
+  position: relative;
 }
 
+.contact .input-box input {
+  width: 100%;
+  padding: 10px 0;
+  font-size: 16px;
+  color: #fff;
+  margin-bottom: 30px;
+  border: none;
+  border-bottom: 1px solid #fff;
+  outline: none;
+  background: transparent;
+}
+.contact .input-box label {
+  position: absolute;
+  top:0;
+  left: 0;
+  padding: 10px 0;
+  font-size: 16px;
+  color: #fff;
+  pointer-events: none;
+  transition: .5s;
+}
+
+.contact .input-box input:focus ~ label,
+.contact .input-box input:valid ~ label {
+  top: -20px;
+  left: 0;
+  color: #03e9f4;
+  font-size: 12px;
+}
 .footer {
     display: flex;
     justify-content: space-between;
@@ -370,3 +412,109 @@ line-height: 1.2;
     color: var(--second-bg-color);
 
 }
+
+.contact form a {
+    position: relative;
+    display: inline-block;
+    padding: 10px 20px;
+    color: #03e9f4;
+    font-size: 16px;
+    text-decoration: none;
+    text-transform: uppercase;
+    overflow: hidden;
+    transition: .5s;
+    margin-top: 40px;
+    letter-spacing: 4px
+  }
+  
+  .contact a:hover {
+    background: #03e9f4;
+    color: #fff;
+    border-radius: 5px;
+    box-shadow: 0 0 5px #03e9f4,
+                0 0 25px #03e9f4,
+                0 0 50px #03e9f4,
+                0 0 100px #03e9f4;
+  }
+  
+  .contact a span {
+    position: absolute;
+    display: block;
+  }
+  
+  .contact a span:nth-child(1) {
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, #03e9f4);
+    animation: btn-anim1 1s linear infinite;
+  }
+  
+  @keyframes btn-anim1 {
+    0% {
+      left: -100%;
+    }
+    50%,100% {
+      left: 100%;
+    }
+  }
+  
+  .contact a span:nth-child(2) {
+    top: -100%;
+    right: 0;
+    width: 2px;
+    height: 100%;
+    background: linear-gradient(180deg, transparent, #03e9f4);
+    animation: btn-anim2 1s linear infinite;
+    animation-delay: .25s
+  }
+  
+  @keyframes btn-anim2 {
+    0% {
+      top: -100%;
+    }
+    50%,100% {
+      top: 100%;
+    }
+  }
+  
+  .contact a span:nth-child(3) {
+    bottom: 0;
+    right: -100%;
+    width: 100%;
+    height: 2px;
+    background: linear-gradient(270deg, transparent, #03e9f4);
+    animation: btn-anim3 1s linear infinite;
+    animation-delay: .5s
+  }
+  
+  @keyframes btn-anim3 {
+    0% {
+      right: -100%;
+    }
+    50%,100% {
+      right: 100%;
+    }
+  }
+  
+  .contact a span:nth-child(4) {
+    bottom: -100%;
+    left: 0;
+    width: 2px;
+    height: 100%;
+    background: linear-gradient(360deg, transparent, #03e9f4);
+    animation: btn-anim4 1s linear infinite;
+    animation-delay: .75s
+  }
+  
+  @keyframes btn-anim4 {
+    0% {
+      bottom: -100%;
+    }
+    50%,100% {
+      bottom: 100%;
+    }
+  }
+
+
