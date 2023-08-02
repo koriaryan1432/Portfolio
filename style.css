@@ -54,9 +54,7 @@ section{
     font-size: 2.5rem;
     color: var(--text-color);
     font-weight: 600;
-    cursor: default;
-    
-        
+    cursor: default;       
     
 }
 
@@ -92,7 +90,20 @@ width: 25vw;
 border: 10px double #00EEff;
 padding: 5px;
 border-radius: 28%;
+animation: floatImage 4s ease-in-out infinite;
 
+}
+
+@keyframes floatImage{
+    0%{
+        transform: translateY(0);
+    }
+    50%{
+        transform: translateY(-2.4rem);
+    }
+    100%{
+        transform: translateY(0);
+    }
 }
 
 
@@ -169,8 +180,8 @@ span {
     
 }
 .about-img img {
-    width: 400px;
-    height: 503px;
+    width: 300px;
+    height: 300px;
 }
 .heading {
     text-align: center;
@@ -523,11 +534,13 @@ line-height: 1.2;
 
 /* breakpoints */
 
-@media(max-width: 500px){
+@media(max-width: 528px){
     html{
         font-size: 55%;
     }
+    
 }
+
 
 
 @media(max-width: 991px){
@@ -539,6 +552,12 @@ line-height: 1.2;
     }
     .services{
         padding-bottom: 7rem;
+    }
+    .portfolio{
+        padding-bottom: 7rem;
+    }
+    .contact{
+        min-height: auto;
     }
     .footer{
         padding: 2rem 3%;
@@ -586,8 +605,8 @@ line-height: 1.2;
     }
     .about-img{
         
-        width: 70vw;
-        margin-top: 4rem;
+        width: 77vw;
+        margin-top: 7rem;
     }
     .services h2{
         margin-bottom: 3rem;
@@ -598,7 +617,39 @@ line-height: 1.2;
 
     }
     .portfolio-container{
-        grid-template-columns: repeat(auto);
+        grid-template-columns: repeat(2,1fr);  
+        min-height: 50vh;
+    }
+}
+
+@media(max-width: 617px){
+    .portfolio-container{
+        grid-template-columns:repeat (1,1fr) ;
+    }
+}
+
+@media(max-width: 450px){
+    html{
+        font-size: 50%;
+    }
+    .contact form .input-box input{
+        width: 100%;
+    }
+}
+
+@media(max-width: 365px){
+    .home-img{
+        width: 90vw;
+    }
+    .about-img{
+        width: 90vw;
+    }
+    .footer{
+        flex-direction: column-reverse;
+    }
+    .footer p {
+        text-align: center;
+        margin-top: 2rem;
     }
 }
 
